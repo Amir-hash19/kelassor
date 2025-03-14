@@ -1,15 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>test</title>
+    <title>چت ساده در Django</title>
+    <style>
+        body { font-family: Arial, sans-serif; direction: rtl; text-align: right; }
+        .chat-box { width: 50%; margin: auto; padding: 20px; border: 1px solid #ccc; border-radius: 10px; background-color: #f9f9f9; }
+        .message { padding: 10px; margin: 10px 0; border-radius: 5px; }
+        .user { background-color: #d1e7dd; text-align: left; }
+        .bot { background-color: #f8d7da; text-align: right; }
+    </style>
 </head>
 <body>
-    <h1>{% for item in text %}
-        {{ item.text }}
+    <div class="chat-box">
+        {% for item in text %}
+            <h3 class="container">this is the text {{ item.text }}</h3>
+        {% empty %}
+            <p>no massage</p>
         {% endfor %}
-        
-    </h1>
+    </div>
 </body>
 </html>
