@@ -4,6 +4,7 @@ from battle.models import User, Message
 from django.views.decorators.csrf import csrf_exempt
 import json
 
+
 @csrf_exempt
 def register_user(request):
     if request.method == "POST":
