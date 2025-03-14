@@ -13,10 +13,14 @@ class MessageAdmin(admin.ModelAdmin):
         if request.user.is_superuser:
             return ("sender", "date")
         return ("firstname", )
-    
-    
-
 admin.site.register(Message)
+
+
+
+class UserAdmin(admin.ModelAdmin):
+    list_display = ("firstname", "lastname", "phone_number")
+    list_filter = ("firstname", "phone_number")
+    
 admin.site.register(User)
 
 

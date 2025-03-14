@@ -27,6 +27,14 @@ def add_messgae(request):
             text = data.get("text"),
         )
         return HttpResponse("text created succesfully")
+    
+
+def show_messages(request):
+    filter_text = Message.objects.order_by("text")
+    context = {
+        "text":filter_text
+    }
+    return render(request, "battle/list_text.html", context)
 
 
 
